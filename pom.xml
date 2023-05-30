@@ -9,6 +9,9 @@
     <packaging>pom</packaging>
 
     <name>[Simakov] Microservices Commons</name>
+    <modules>
+        <module>lib</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -16,6 +19,7 @@
         <maven.compiler.target>19</maven.compiler.target>
         <libs.spring.boot.version>3.0.6</libs.spring.boot.version>
         <spring-boot-dependencies.version>3.0.6</spring-boot-dependencies.version>
+        <jakarta.persistence-api.version>3.1.0</jakarta.persistence-api.version>
     </properties>
 
     <dependencyManagement>
@@ -26,6 +30,11 @@
                 <version>${spring-boot-dependencies.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>ru.simakov</groupId>
+                <artifactId>jpa</artifactId>
+                <version>1.0-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
