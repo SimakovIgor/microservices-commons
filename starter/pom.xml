@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.simakov.commons.lib</groupId>
-    <artifactId>lib</artifactId>
+    <groupId>ru.simakov.commons.starter</groupId>
+    <artifactId>starter</artifactId>
 
     <parent>
         <groupId>ru.simakov.commons</groupId>
@@ -14,10 +14,10 @@
     </parent>
 
     <packaging>pom</packaging>
-    <name>[Simakov] Microservices | Lib</name>
+    <name>[Simakov] Microservices | Starter</name>
 
     <modules>
-        <module>jpa</module>
+        <module>open-telemetry-jaeger</module>
     </modules>
 
 </project>
