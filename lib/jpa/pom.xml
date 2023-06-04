@@ -13,10 +13,6 @@
     <name>[Simakov] Microservices JPA Lib</name>
     <packaging>jar</packaging>
 
-    <properties>
-        <ru.simakov.libs.version>1.0-SNAPSHOT</ru.simakov.libs.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>jakarta.persistence</groupId>

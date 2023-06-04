@@ -18,10 +18,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
-        <libs.spring.boot.version>3.0.6</libs.spring.boot.version>
-        <spring-boot-dependencies.version>3.0.6</spring-boot-dependencies.version>
+        <libs.spring.boot.version>3.1.0</libs.spring.boot.version>
+        <spring-boot-dependencies.version>3.1.0</spring-boot-dependencies.version>
         <jakarta.persistence-api.version>3.1.0</jakarta.persistence-api.version>
-        <spring-cloud.version>2022.0.1</spring-cloud.version>
+        <spring-cloud.version>2022.0.3</spring-cloud.version>
     </properties>
 
     <dependencyManagement>
