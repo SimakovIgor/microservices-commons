@@ -24,6 +24,8 @@
         <spring-cloud.version>2022.0.3</spring-cloud.version>
         <maven-compiler-plugin.source>19</maven-compiler-plugin.source>
         <maven-compiler-plugin.target>19</maven-compiler-plugin.target>
+        <jib-maven-plugin.version>3.3.2</jib-maven-plugin.version>
+        <image>simakoff/${project.artifactId}:${project.version}</image>
     </properties>
 
     <dependencyManagement>
@@ -92,6 +94,41 @@
                         <execution>
                             <goals>
                                 <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>com.google.cloud.tools</groupId>
+                    <artifactId>jib-maven-plugin</artifactId>
+                    <version>${jib-maven-plugin.version}</version>
+                    <configuration>
+                        <from>
+                            <image>
+                                eclipse-temurin:19@sha256:f3fbf1ad599d4b5dbdd7ceb55708d10cb9fafb08e094ef91e92aa63b520a232e
+                            </image>
+                            <platforms>
+                                <platform>
+                                    <architecture>arm64</architecture>
+                                    <os>linux</os>
+                                </platform>
+                                <platform>
+                                    <architecture>amd64</architecture>
+                                    <os>linux</os>
+                                </platform>
+                            </platforms>
+                        </from>
+                        <to>
+                            <tags>
+                                <tag>latest</tag>
+                            </tags>
+                        </to>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>build</goal>
                             </goals>
                         </execution>
                     </executions>
