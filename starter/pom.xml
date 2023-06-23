@@ -19,6 +19,7 @@
     <modules>
         <module>open-telemetry-jaeger</module>
         <module>amqp</module>
+        <module>testing</module>
     </modules>
 
 </project>

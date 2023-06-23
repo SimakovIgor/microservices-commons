@@ -59,15 +59,22 @@
                 <artifactId>notification</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
+
             <dependency>
                 <groupId>ru.simakov.commons.starter</groupId>
-                <artifactId>open-telemetry-jaeger</artifactId>
+                <artifactId>open-telemetry-jaeger-starter</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>ru.simakov.commons.starter</groupId>
-                <artifactId>amqp</artifactId>
+                <artifactId>amqp-starter</artifactId>
                 <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>ru.simakov.commons.starter</groupId>
+                <artifactId>testing-starter</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -76,10 +83,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
     </dependencies>
 
