@@ -8,7 +8,7 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.utility.DockerImageName;
 
 public class PostgreSQLInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
-    private static final DockerImageName IMAGE = DockerImageName.parse("postgres:14.6-alpine");
+    private static final DockerImageName IMAGE = DockerImageName.parse("postgres:latest");
     private static final Network NETWORK = Network.newNetwork();
     private static final PostgreSQLContainer<?> CONTAINER = new PostgreSQLContainer<>(IMAGE);
 

@@ -1,5 +1,6 @@
 package ru.simakov.starter.testing.initializer;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,6 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest(classes = {RabbitMQInitializer.class})
 @ActiveProfiles("test")
 @ContextConfiguration(initializers = {RabbitMQInitializer.class})
+@Slf4j
 class RabbitMQInitializerTest {
 
     @Autowired
@@ -29,5 +31,10 @@ class RabbitMQInitializerTest {
             .isNotBlank();
         assertThat(environment.getRequiredProperty("spring.rabbitmq.password"))
             .isNotBlank();
+
+        log.info("RabbitMQ environment:");
+        log.info("spring.datasource.url: " + environment.getRequiredProperty("spring.rabbitmq.addresses"));
+        log.info("spring.datasource.username: " + environment.getRequiredProperty("spring.rabbitmq.username"));
+        log.info("spring.datasource.password: " + environment.getRequiredProperty("spring.rabbitmq.password"));
     }
 }

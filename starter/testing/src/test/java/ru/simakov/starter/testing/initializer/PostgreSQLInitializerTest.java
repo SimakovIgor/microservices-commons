@@ -1,5 +1,6 @@
 package ru.simakov.starter.testing.initializer;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,6 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest(classes = {PostgreSQLInitializer.class})
 @ActiveProfiles("test")
 @ContextConfiguration(initializers = {PostgreSQLInitializer.class})
+@Slf4j
 class PostgreSQLInitializerTest {
     @Autowired
     private ApplicationContext context;
@@ -19,6 +21,7 @@ class PostgreSQLInitializerTest {
     @Test
     void shouldInitializeDatasourceProps() {
         final var environment = context.getEnvironment();
+
         assertThat(environment)
                 .isNotNull();
         assertThat(environment.getRequiredProperty("spring.datasource.url"))
@@ -31,6 +34,12 @@ class PostgreSQLInitializerTest {
                 .isNotBlank();
         assertThat(environment.getProperty("spring.jpa.properties.hibernate.enable_lazy_load_no_trans"))
                 .isNull();
+
+        log.info("JDBC environment:");
+        log.info("spring.datasource.url: " + environment.getRequiredProperty("spring.datasource.url"));
+        log.info("spring.datasource.username: " + environment.getRequiredProperty("spring.datasource.username"));
+        log.info("spring.datasource.password: " + environment.getRequiredProperty("spring.datasource.password"));
+
     }
 
 }
