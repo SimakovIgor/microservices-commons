@@ -22,14 +22,16 @@
         <spring-boot-dependencies.version>3.1.0</spring-boot-dependencies.version>
         <jakarta.persistence-api.version>3.1.0</jakarta.persistence-api.version>
         <spring-cloud.version>2022.0.3</spring-cloud.version>
+
+        <jib-maven-plugin.version>3.3.2</jib-maven-plugin.version>
         <maven-compiler-plugin.source>19</maven-compiler-plugin.source>
         <maven-compiler-plugin.target>19</maven-compiler-plugin.target>
-        <jib-maven-plugin.version>3.3.2</jib-maven-plugin.version>
         <image>simakoff/${project.artifactId}:${project.version}</image>
         <spotbugs-maven-plugin.version>4.7.3.5</spotbugs-maven-plugin.version>
         <findsecbugs-plugin.version>1.12.0</findsecbugs-plugin.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-
+        <maven-checkstyle-plugin.version>3.3.0</maven-checkstyle-plugin.version>
+        <maven-pmd-plugin.version>3.21.0</maven-pmd-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -172,6 +174,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>${maven-checkstyle-plugin.version}</version>
                     <configuration>
                         <consoleOutput>true</consoleOutput>
                         <violationSeverity>warning</violationSeverity>
@@ -191,12 +194,40 @@
                         </execution>
                     </executions>
                 </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>${maven-pmd-plugin.version}</version>
+                    <configuration>
+                        <failOnViolation>true</failOnViolation>
+                        <includeTests>true</includeTests>
+                        <linkXRef>false</linkXRef>
+                        <printFailingErrors>true</printFailingErrors>
+                        <excludeRoots>
+                            <excludeRoot>target/generated-sources</excludeRoot>
+                        </excludeRoots>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>pmd-check</id>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
