@@ -18,7 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ActiveProfiles({"test"})
 public abstract class DatabaseAwareTestBase {
     @Autowired
-    protected JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
     @Autowired
     private TransactionTemplate transactionTemplate;
 
@@ -40,13 +40,13 @@ public abstract class DatabaseAwareTestBase {
                 .collect(Collectors.joining(", ")));
     }
 
-    protected long countRecordsInTable(String tableName) {
+    protected long countRecordsInTable(final String tableName) {
         final var queryResult = jdbcTemplate.queryForObject(
                 "select count(*) from " + tableNameWithSchema(tableName), Long.class);
         return Objects.requireNonNullElse(queryResult, 0L);
     }
 
-    protected String tableNameWithSchema(String tableName) {
+    protected String tableNameWithSchema(final String tableName) {
         var schema = getSchema();
         return tableName.startsWith(schema) ? tableName : String.format("%s.%s", schema, tableName);
     }
