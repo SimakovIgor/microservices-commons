@@ -9,12 +9,12 @@
     <parent>
         <groupId>ru.simakov.commons.clients</groupId>
         <artifactId>clients</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <name>[Simakov] Microservices | Client | Fraud</name>
     <packaging>jar</packaging>
-    
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

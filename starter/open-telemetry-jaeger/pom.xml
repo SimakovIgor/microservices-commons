@@ -9,7 +9,7 @@
     <parent>
         <groupId>ru.simakov.commons.starter</groupId>
         <artifactId>starter</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <name>[Simakov] Microservices | Starter | Open Telemetry Jaeger</name>

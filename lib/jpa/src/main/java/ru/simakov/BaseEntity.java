@@ -1,6 +1,5 @@
 package ru.simakov;
 
-
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -20,6 +19,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @ToString
 public class BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

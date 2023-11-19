@@ -12,8 +12,8 @@ public class RabbitMQMessageProducer {
     /**
      * Publishes a payload to the specified exchange using the given routing key.
      *
-     * @param payload The payload to be published.
-     * @param exchange The exchange to which the payload should be published.
+     * @param payload    The payload to be published.
+     * @param exchange   The exchange to which the payload should be published.
      * @param routingKey The routing key to be used for publishing the payload.
      */
     public void publish(final Object payload,
