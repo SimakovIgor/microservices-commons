@@ -27,7 +27,7 @@
         <libs.spring.boot.version>3.1.0</libs.spring.boot.version>
         <spring-boot-dependencies.version>3.1.0</spring-boot-dependencies.version>
         <jakarta.persistence-api.version>3.1.0</jakarta.persistence-api.version>
-        <spring-cloud.version>2022.0.3</spring-cloud.version>
+        <spring-cloud.version>2022.0.4</spring-cloud.version>
 
         <jib-maven-plugin.version>3.3.2</jib-maven-plugin.version>
 
