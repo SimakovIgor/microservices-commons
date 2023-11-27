@@ -20,6 +20,7 @@
         <module>lib</module>
         <module>clients</module>
         <module>starter</module>
+        <module>model</module>
     </modules>
 
     <properties>
@@ -62,6 +63,11 @@
             <dependency>
                 <groupId>ru.simakov.commons.clients</groupId>
                 <artifactId>fraud</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>ru.simakov.commons.model</groupId>
+                <artifactId>commons-model-internal</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
             <dependency>

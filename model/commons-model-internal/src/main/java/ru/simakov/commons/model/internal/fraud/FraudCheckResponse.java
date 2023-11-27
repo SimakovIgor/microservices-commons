@@ -1,19 +1,17 @@
-package ru.simakov.clients.fraud;
+package ru.simakov.commons.model.internal.fraud;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
+@Data
 @ToString
 @Builder
 public class FraudCheckResponse {
     private Long id;
-    private Boolean isFraudster;
+    private Boolean isFraud;
 }
