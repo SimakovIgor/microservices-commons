@@ -30,7 +30,7 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <libs.spring.boot.version>3.1.5</libs.spring.boot.version>
-        <spring-boot-dependencies.version>3.1.5</spring-boot-dependencies.version>
+        <spring-boot-dependencies.version>3.2.0</spring-boot-dependencies.version>
         <jakarta.persistence-api.version>3.1.0</jakarta.persistence-api.version>
         <spring-cloud.version>2022.0.4</spring-cloud.version>
 
