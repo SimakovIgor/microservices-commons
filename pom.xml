@@ -34,7 +34,7 @@
         <jakarta.persistence-api.version>3.1.0</jakarta.persistence-api.version>
         <spring-cloud.version>2023.0.0</spring-cloud.version>
 
-        <jib-maven-plugin.version>3.4.0</jib-maven-plugin.version>
+        <jib-maven-plugin.version>3.4.1</jib-maven-plugin.version>
 
         <image>simakoff/${project.artifactId}:${project.version}</image>
     </properties>
