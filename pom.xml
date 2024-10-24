@@ -112,7 +112,7 @@
                     <configuration>
                         <from>
                             <image>
-                                eclipse-temurin:21
+                                eclipse-temurin:21-jdk@sha256:76886a95a6d18159c1ba1699fbbacc24c032b22485463045a02614ada4566912
                             </image>
                             <platforms>
                                 <platform>
