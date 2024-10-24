@@ -8,7 +8,8 @@ import org.testcontainers.containers.Network;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.utility.DockerImageName;
 
-@SuppressFBWarnings({"BC_UNCONFIRMED_CAST_OF_RETURN_VALUE"})
+@SuppressFBWarnings("BC_UNCONFIRMED_CAST_OF_RETURN_VALUE")
+@SuppressWarnings("AbbreviationAsWordInName")
 public class PostgreSQLInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
     private static final DockerImageName IMAGE = DockerImageName.parse("postgres:latest");
     private static final Network NETWORK = Network.newNetwork();

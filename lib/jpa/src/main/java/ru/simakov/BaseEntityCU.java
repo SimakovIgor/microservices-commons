@@ -19,6 +19,7 @@ import java.time.LocalDateTime;
 @ToString(callSuper = true)
 @MappedSuperclass
 @EqualsAndHashCode(callSuper = true)
+@SuppressWarnings("AbbreviationAsWordInName")
 public abstract class BaseEntityCU extends BaseEntityC {
 
     @Column(name = "update_date")

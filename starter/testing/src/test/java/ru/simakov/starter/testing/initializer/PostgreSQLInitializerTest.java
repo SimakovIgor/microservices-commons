@@ -10,10 +10,11 @@ import org.springframework.test.context.ContextConfiguration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(classes = {PostgreSQLInitializer.class})
+@SpringBootTest(classes = PostgreSQLInitializer.class)
 @ActiveProfiles("test")
-@ContextConfiguration(initializers = {PostgreSQLInitializer.class})
+@ContextConfiguration(initializers = PostgreSQLInitializer.class)
 @Slf4j
+@SuppressWarnings({"AbbreviationAsWordInName", "PMD.UseExplicitTypes"})
 class PostgreSQLInitializerTest {
     @Autowired
     private ApplicationContext context;
@@ -23,17 +24,17 @@ class PostgreSQLInitializerTest {
         final var environment = context.getEnvironment();
 
         assertThat(environment)
-                .isNotNull();
+            .isNotNull();
         assertThat(environment.getRequiredProperty("spring.datasource.url"))
-                .isNotBlank()
-                .startsWith("jdbc:postgresql:")
-                .contains("prepareThreshold=0");
+            .isNotBlank()
+            .startsWith("jdbc:postgresql:")
+            .contains("prepareThreshold=0");
         assertThat(environment.getRequiredProperty("spring.datasource.username"))
-                .isNotBlank();
+            .isNotBlank();
         assertThat(environment.getRequiredProperty("spring.datasource.password"))
-                .isNotBlank();
+            .isNotBlank();
         assertThat(environment.getProperty("spring.jpa.properties.hibernate.enable_lazy_load_no_trans"))
-                .isNull();
+            .isNull();
 
         log.info("JDBC environment:");
         log.info("spring.datasource.url: " + environment.getRequiredProperty("spring.datasource.url"));

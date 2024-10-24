@@ -15,7 +15,8 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@ActiveProfiles({"test"})
+@ActiveProfiles("test")
+@SuppressWarnings("PMD.UseExplicitTypes")
 public abstract class DatabaseAwareTestBase {
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -29,25 +30,25 @@ public abstract class DatabaseAwareTestBase {
     @BeforeEach
     void check() {
         getTables().stream()
-                .map(this::countRecordsInTable)
-                .forEach(count -> assertThat(count).isZero());
+            .map(this::countRecordsInTable)
+            .forEach(count -> assertThat(count).isZero());
     }
 
     @AfterEach
     void truncateTables() {
         jdbcTemplate.execute("truncate table " + getTables().stream()
-                .map(this::tableNameWithSchema)
-                .collect(Collectors.joining(", ")));
+            .map(this::tableNameWithSchema)
+            .collect(Collectors.joining(", ")));
     }
 
     protected long countRecordsInTable(final String tableName) {
         final var queryResult = jdbcTemplate.queryForObject(
-                "select count(*) from " + tableNameWithSchema(tableName), Long.class);
+            "select count(*) from " + tableNameWithSchema(tableName), Long.class);
         return Objects.requireNonNullElse(queryResult, 0L);
     }
 
     protected String tableNameWithSchema(final String tableName) {
-        var schema = getSchema();
+        final var schema = getSchema();
         return tableName.startsWith(schema) ? tableName : String.format("%s.%s", schema, tableName);
     }
 

@@ -8,6 +8,7 @@ import org.testcontainers.utility.DockerImageName;
 
 import java.util.Set;
 
+@SuppressWarnings("AbbreviationAsWordInName")
 public class RabbitMQInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
     private static final String VHOST = "test-vhost";

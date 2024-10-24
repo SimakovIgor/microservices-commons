@@ -12,12 +12,13 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @AllArgsConstructor
+@SuppressWarnings({"AbbreviationAsWordInName", "PMD.UseExplicitTypes"})
 public class RabbitMQAutoConfiguration {
     private final ConnectionFactory connectionFactory;
 
     @Bean
     public AmqpTemplate amqpTemplate() {
-        var rabbitTemplate = new RabbitTemplate(connectionFactory);
+        final var rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setMessageConverter(jacksonConverter());
         return rabbitTemplate;
     }
@@ -29,7 +30,7 @@ public class RabbitMQAutoConfiguration {
 
     @Bean
     public SimpleRabbitListenerContainerFactory simpleRabbitListenerContainerFactory() {
-        var simpleRabbitListenerContainerFactory = new SimpleRabbitListenerContainerFactory();
+        final var simpleRabbitListenerContainerFactory = new SimpleRabbitListenerContainerFactory();
         simpleRabbitListenerContainerFactory.setConnectionFactory(connectionFactory);
         simpleRabbitListenerContainerFactory.setMessageConverter(jacksonConverter());
         return simpleRabbitListenerContainerFactory;

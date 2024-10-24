@@ -6,6 +6,7 @@ import org.springframework.amqp.core.AmqpTemplate;
 
 @Slf4j
 @RequiredArgsConstructor
+@SuppressWarnings("AbbreviationAsWordInName")
 public class RabbitMQMessageProducer {
     private final AmqpTemplate amqpTemplate;
 

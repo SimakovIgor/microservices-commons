@@ -10,10 +10,11 @@ import org.springframework.test.context.ContextConfiguration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(classes = {RabbitMQInitializer.class})
+@SpringBootTest(classes = RabbitMQInitializer.class)
 @ActiveProfiles("test")
-@ContextConfiguration(initializers = {RabbitMQInitializer.class})
+@ContextConfiguration(initializers = RabbitMQInitializer.class)
 @Slf4j
+@SuppressWarnings({"AbbreviationAsWordInName", "PMD.UseExplicitTypes"})
 class RabbitMQInitializerTest {
 
     @Autowired

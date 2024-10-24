@@ -32,7 +32,7 @@ public class BaseEntity {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        BaseEntity that = (BaseEntity) o;
+        final BaseEntity that = (BaseEntity) o;
         return Objects.equals(id, that.id);
     }
 
